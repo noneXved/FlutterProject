@@ -13,14 +13,21 @@ class MyApp extends StatefulWidget {
 
 class _State extends State<MyApp> {
 
-  String _value = 'Hello World!';
+  int _number = 0;
   
-  void _onPressed (String value) {
+  void _add () {
     setState(() {
-      _value = value;
+      _number++;
     });
   }
-  
+
+  void _sub () {
+    setState(() {
+      _number--;
+    });
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
@@ -32,8 +39,9 @@ class _State extends State<MyApp> {
         child: new Center(
           child: new Column(
             children: <Widget>[
-              new Text(_value),
-              new RaisedButton(onPressed: () => _onPressed('Hi my name is Damian'), child: new Text('Click me'),)
+              new Text('Value = $_number'),
+              new IconButton(icon: new Icon(Icons.add),  onPressed: _add),
+              new IconButton(icon: new Icon(Icons.remove),  onPressed: _sub)
             ],
           ),
         ),
