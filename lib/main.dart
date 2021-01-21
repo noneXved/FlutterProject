@@ -1,85 +1,76 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'dart:async';
 import 'dart:convert';
 
+//https://nonexved.github.io/FlutterProject/tele.json
+//http://country.io/names.json
 
-Future<Album> fetchAlbum() async {
-  final response =
-  await http.get('https://jsonplaceholder.typicode.com/albums/1');
-
-  if (response.statusCode == 200) {
-    // If the server did return a 200 OK response,
-    // then parse the JSON.
-    return Album.fromJson(jsonDecode(response.body));
-  } else {
-    // If the server did not return a 200 OK response,
-    // then throw an exception.
-    throw Exception('Failed to load album');
-  }
+void main() {
+  runApp(new MaterialApp(
+    home: new MyApp(),
+  ));
 }
-
-class Album {
-  final int userId;
-  final int id;
-  final String title;
-
-  Album({this.userId, this.id, this.title});
-
-  factory Album.fromJson(Map<String, dynamic> json) {
-    return Album(
-      userId: json['userId'],
-      id: json['id'],
-      title: json['title'],
-    );
-  }
-}
-
-void main() => runApp(MyApp());
 
 class MyApp extends StatefulWidget {
-  MyApp({Key key}) : super(key: key);
-
   @override
-  _MyAppState createState() => _MyAppState();
+  _State createState() => new _State();
 }
 
-class _MyAppState extends State<MyApp> {
-  Future<Album> futureAlbum;
+class _State extends State<MyApp> {
 
-  @override
-  void initState() {
-    super.initState();
-    futureAlbum = fetchAlbum();
+  Map _countries = new Map();
+
+  void _getData() async {
+    var url = 'http://country.io/names.json';
+    var response = await http.get(url);
+
+    if(response.statusCode == 200) {
+      setState(() => _countries = json.decode(response.body));
+      print('Loaded ${_countries.length} countries');
+    } else {
+      print("Status code: ${response.statusCode}");
+    }
   }
+
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Fetch Data Example',
-      theme: ThemeData(
-        primarySwatch: Colors.amber,
-      ),
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Fetch Data Example'),
-        ),
-        body: Center(
-          child: FutureBuilder<Album>(
-            future: futureAlbum,
-            builder: (context, snapshot) {
-              if (snapshot.hasData) {
-                return Text(snapshot.data.title + " " + snapshot.data.userId.toString());
-              } else if (snapshot.hasError) {
-                return Text("${snapshot.error}");
-              }
 
-              // By default, show a loading spinner.
-              return CircularProgressIndicator();
-            },
-          ),
-        ),
+    _getData();
+
+    return new Scaffold(
+      appBar: new AppBar(
+        title: new Text('Name here'),
+      ),
+      body: new Container(
+          padding: new EdgeInsets.all(32.0),
+          child: new Center(
+            child: new Column(
+              children: <Widget>[
+                new Text('Countries', style: new TextStyle(fontWeight: FontWeight.bold),),
+                new Expanded(child: new ListView.builder(
+                  itemCount: _countries.length,
+                  itemBuilder: (BuildContext context, int index){
+                    String key = _countries.keys.elementAt(index);
+                    return new Row(
+                      children: <Widget>[
+                        new Text('${key} : '),
+                        new Text(_countries[key])
+                      ],
+                    );
+                  },
+
+                ))
+
+              ],
+            ),
+          )
       ),
     );
   }
+
+  // @override
+  // void initState() {
+  //   _getData();
+  // }
 }
