@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:async';
 import 'dart:convert';
+import 'secondPage.dart';
 
 void main() => runApp(MyApp());
 
@@ -20,15 +21,15 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
         home: Scaffold(
             appBar: AppBar(title: Text('Easylist')),
-            body:  Column(children: [
+            body: Column(children: [
               Container(
-                child:
-                    RaisedButton(onPressed: () {
+                child: RaisedButton(
+                    onPressed: () {
                       setState(() {
                         _products.add('Advanced Food Tester');
-
                       });
-                    }, child: Text('AddProduct')),
+                    },
+                    child: Text('AddProduct')),
               ),
               Column(
                 children: _products
@@ -45,28 +46,28 @@ class _MyAppState extends State<MyApp> {
               Column(
                 children: _products
                     .map((element) => Card(
-                  child: Column(
-                    children: <Widget>[
-                      Image.asset('assets/food.jpg'),
-                      Text(element)
-                    ],
-                  ),
-                ))
+                          child: Column(
+                            children: <Widget>[
+                              Image.asset('assets/food.jpg'),
+                              Text(element)
+                            ],
+                          ),
+                        ))
                     .toList(),
               ),
-              Column(
-                children: _products
-                    .map((element) => Card(
-                  child: Column(
-                    children: <Widget>[
-                      Image.asset('assets/food.jpg'),
-                      Text(element)
-                    ],
+              Column(children: [
+                Container(
+                  child: ElevatedButton(
+                    child: Text('Open route'),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => FirstRoute()),
+                      );
+                    },
                   ),
-                ))
-                    .toList(),
-              )
-
+                )
+              ])
             ])));
   }
 }
