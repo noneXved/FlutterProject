@@ -1,73 +1,51 @@
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
-import 'dart:async';
-import 'dart:convert';
-import 'secondPage.dart';
 
-void main() => runApp(MyApp());
+void main() {
+  runApp(MaterialApp(
+    title: 'Navigation Basics',
+    home: FirstRoute(),
+  ));
+}
 
-class MyApp extends StatefulWidget {
+class FirstRoute extends StatelessWidget {
   @override
-  State<StatefulWidget> createState() {
-    return _MyAppState();
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('First Route'),
+      ),
+      body: Center(
+        child: ElevatedButton(
+          child: Text('Open route'),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => SecondRoute()),
+            );
+          },
+        ),
+      ),
+    );
   }
 }
 
-class _MyAppState extends State<MyApp> {
-  List<String> _products = ['Food Tester'];
-
+class SecondRoute extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        home: Scaffold(
-            appBar: AppBar(title: Text('Easylist')),
-            body: Column(children: [
-              Container(
-                child: RaisedButton(
-                    onPressed: () {
-                      setState(() {
-                        _products.add('Advanced Food Tester');
-                      });
-                    },
-                    child: Text('AddProduct')),
-              ),
-              Column(
-                children: _products
-                    .map((element) => Card(
-                          child: Column(
-                            children: <Widget>[
-                              Image.asset('assets/food.jpg'),
-                              Text(element)
-                            ],
-                          ),
-                        ))
-                    .toList(),
-              ),
-              Column(
-                children: _products
-                    .map((element) => Card(
-                          child: Column(
-                            children: <Widget>[
-                              Image.asset('assets/food.jpg'),
-                              Text(element)
-                            ],
-                          ),
-                        ))
-                    .toList(),
-              ),
-              Column(children: [
-                Container(
-                  child: ElevatedButton(
-                    child: Text('Open route'),
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => FirstRoute()),
-                      );
-                    },
-                  ),
-                )
-              ])
-            ])));
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Second Route"),
+      ),
+      body: Center(
+          child: Container (
+            child: ElevatedButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              child: Image.asset("assets/food.jpg"),
+            ),
+          )
+      ),
+    );
   }
 }
