@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:untitled/parseJson.dart';
@@ -50,16 +51,66 @@ class _State extends State<MyApp> {
     return MaterialApp(
         home: Scaffold(
       appBar: AppBar(title: Text('Telemagazyn')),
-      body: ListView(
-        padding: EdgeInsets.all(16),
-        children: [
-          buildImageInteractionTVP1(),
-          buildImageInteractionPolsat(),
-          buildImageInteractionTVP2(),
-          buildImageInteractionTVN(),
-        ],
+          body: Container(
+            child: FutureBuilder(
+              future: _getTVdata(),
+              builder: (BuildContext context, AsyncSnapshot snapshot){
+                print(snapshot.data);
+                if(snapshot.data == null){
+                  return Container(
+                      child: Center(
+                          child: Text("Loading...")
+                      )
+                  );
+                } else {
+                  return ListView.builder(
+                    itemCount: snapshot.data.length,
+                    itemBuilder: (BuildContext context, int index) {
+                      return Card(
+                        clipBehavior: Clip.antiAlias,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(24),
+                        ),
+                        child: Column(
+                          children: [
+                            Stack(
+                              children: [
+                                Image(image: CachedNetworkImageProvider(snapshot.data[index].imageUrl), fit: BoxFit.cover, height: 240)
+                              ],
+                            ),
+                            Padding(
+                              padding: EdgeInsets.all(16).copyWith(bottom: 0, right: 160),
+                              child: Text(snapshot.data[index].name,
+                                  style: TextStyle(fontSize: 16), textAlign: TextAlign.left),
+                            ),
+                            ButtonBar(
+                              alignment: MainAxisAlignment.start,
+                              children: [
+                                FlatButton(
+                                  child: Text('Sprawdz program'),
+                                  onPressed: () {
+                                    Navigator.push(context,
+                                        MaterialPageRoute(builder: (context) => DetailPage(snapshot.data[index])));
+                                  },
+                                )
+                              ],
+                            )
+                          ],
+                        ),
+                      );
+                    },
+                  );
+                }
+              },
+            ),
+          ),
+          // buildImageInteractionTVP1(),
+          // buildImageInteractionPolsat(),
+          // buildImageInteractionTVP2(),
+          // buildImageInteractionTVN(),
+
       ),
-    ));
+    );
   }
 
   Widget buildImageInteractionTVP1() => Card(
@@ -195,21 +246,18 @@ class _State extends State<MyApp> {
       );
 }
 
-class SecondRoute extends StatelessWidget {
+class DetailPage extends StatelessWidget {
+
+  final TVJsonData tvJsonData;
+
+  DetailPage(this.tvJsonData);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Second Route"),
-      ),
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          child: Text('Go back!'),
-        ),
-      ),
+        appBar: AppBar(
+          title: Text(tvJsonData.name),
+        )
     );
   }
 }
