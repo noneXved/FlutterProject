@@ -3,7 +3,7 @@ class TVJsonData {
   String name;
   String imageUrl;
   Info info;
-  List<TvProgram> tvProgram;
+  TvProgram tvProgram;
 
   TVJsonData({this.id, this.name, this.imageUrl, this.info, this.tvProgram});
 
@@ -12,12 +12,9 @@ class TVJsonData {
     name = json['name'];
     imageUrl = json['image_url'];
     info = json['info'] != null ? new Info.fromJson(json['info']) : null;
-    if (json['tv_program'] != null) {
-      tvProgram = new List<TvProgram>();
-      json['tv_program'].forEach((v) {
-        tvProgram.add(new TvProgram.fromJson(v));
-      });
-    }
+    tvProgram = json['tv_program'] != null
+        ? new TvProgram.fromJson(json['tv_program'])
+        : null;
   }
 
   Map<String, dynamic> toJson() {
@@ -29,7 +26,7 @@ class TVJsonData {
       data['info'] = this.info.toJson();
     }
     if (this.tvProgram != null) {
-      data['tv_program'] = this.tvProgram.map((v) => v.toJson()).toList();
+      data['tv_program'] = this.tvProgram.toJson();
     }
     return data;
   }
@@ -55,20 +52,29 @@ class Info {
 }
 
 class TvProgram {
-  String hour;
-  String movie;
+  String film1;
+  String film2;
+  String film3;
+  String film4;
+  String film5;
 
-  TvProgram({this.hour, this.movie});
+  TvProgram({this.film1, this.film2, this.film3, this.film4, this.film5});
 
   TvProgram.fromJson(Map<String, dynamic> json) {
-    hour = json['hour'];
-    movie = json['movie'];
+    film1 = json['film1'];
+    film2 = json['film2'];
+    film3 = json['film3'];
+    film4 = json['film4'];
+    film5 = json['film5'];
   }
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['hour'] = this.hour;
-    data['movie'] = this.movie;
+    data['film1'] = this.film1;
+    data['film2'] = this.film2;
+    data['film3'] = this.film3;
+    data['film4'] = this.film4;
+    data['film5'] = this.film5;
     return data;
   }
 }

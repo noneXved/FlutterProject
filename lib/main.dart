@@ -1,17 +1,12 @@
-import 'package:cached_network_image/cached_network_image.dart';
-import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
-import 'package:untitled/parseJson.dart';
-import 'dart:async';
-import 'tvp1.dart';
-import 'polsat.dart';
-import 'tvp2.dart';
-import 'tvn.dart';
-import 'package:flutter/foundation.dart';
 import 'dart:async';
 import 'dart:convert';
-import 'parseJson.dart';
+
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_cache_manager/flutter_cache_manager.dart';
+import 'package:untitled/parseJson.dart';
+
+import 'parseJson.dart';
 
 Future<List<TVJsonData>> _getTVdata() async {
   var file = await DefaultCacheManager()
@@ -72,10 +67,11 @@ class _State extends State<MyApp> {
                           Stack(
                             children: [
                               Image(
-                                  image: CachedNetworkImageProvider(
-                                      snapshot.data[index].imageUrl),
-                                  fit: BoxFit.cover,
-                                  height: 240)
+                                image: CachedNetworkImageProvider(
+                                    snapshot.data[index].imageUrl),
+                                fit: BoxFit.cover,
+                                height: 240,
+                              )
                             ],
                           ),
                           Align(
@@ -100,7 +96,7 @@ class _State extends State<MyApp> {
                                 },
                               )
                             ],
-                          )
+                          ),
                         ],
                       ),
                     );
@@ -126,11 +122,12 @@ class DetailPage extends StatelessWidget {
         child: new AlertDialog(
           title: new Text(message),
           actions: <Widget>[
-            new FlatButton(onPressed: () => Navigator.of(context, rootNavigator: true).pop('dialog'), child: new Text('Ok'))
+            new FlatButton(
+                onPressed: () =>
+                    Navigator.of(context, rootNavigator: true).pop('dialog'),
+                child: new Text('Ok'))
           ],
-        )
-
-    );
+        ));
   }
 
   @override
@@ -139,72 +136,103 @@ class DetailPage extends StatelessWidget {
         appBar: AppBar(
           title: Text(tvJsonData.name),
         ),
-        body: ListView(
-            padding: EdgeInsets.all(16),
-          children: [
-             Card(
-                clipBehavior: Clip.antiAlias,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(24),
-                ),
-                child: Column(children: [
-                  Stack(
-                    children: [
-                      Image(
-                          image:
-                              CachedNetworkImageProvider(tvJsonData.imageUrl),
-                          fit: BoxFit.cover,
-                          height: 240)
-                    ],
-                  ),
-                  Align(
-                      alignment: Alignment.topLeft,
-                      child: Padding(
-                        padding: EdgeInsets.all(16).copyWith(),
-                        child: Text(tvJsonData.name,
-                            style: TextStyle(fontSize: 16),
-                            textAlign: TextAlign.left),
-                      )),
-                ])),
-
-            Card(
+        body: ListView(padding: EdgeInsets.all(16), children: [
+          Card(
               clipBehavior: Clip.antiAlias,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(24),
               ),
-              child: Column(
-                children: [
-                  Padding(
-                    padding: EdgeInsets.all(16).copyWith(),
-                    child: Text(tvJsonData.info.shortInfo,
-                        style: TextStyle(fontSize: 16), textAlign: TextAlign.left),
-                  ),
-                  Align(
-                    alignment: Alignment.bottomLeft,
-                    child: FlatButton(
-                        child: Text("Czytaj wiecej...", textAlign: TextAlign.left,
-                        ),
-                        onPressed: () => _showAlert(context, tvJsonData.info.longInfo)
-                    ),
-                  )
-                ],
-              ),
+              child: Column(children: [
+                Stack(
+                  children: [
+                    Image(
+                        image: CachedNetworkImageProvider(tvJsonData.imageUrl),
+                        fit: BoxFit.cover,
+                        height: 240)
+                  ],
+                ),
+                Align(
+                    alignment: Alignment.topLeft,
+                    child: Padding(
+                      padding: EdgeInsets.all(16).copyWith(),
+                      child: Text(tvJsonData.name,
+                          style: TextStyle(fontSize: 16),
+                          textAlign: TextAlign.left),
+                    )),
+              ])),
+          Card(
+            clipBehavior: Clip.antiAlias,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(24),
             ),
-            // ListView.builder(
-            //   itemCount: tvJsonData.tvProgram.length,
-            //   itemBuilder: (BuildContext context, int index) {
-            //       return ListView.builder(
-            //       itemCount: tvJsonData.tvProgram.length,
-            //       itemBuilder: (BuildContext context, int index) {
-            //
-            //       }
-            //       )
-            //       ),
-            //     );
-            //   }
-            // )
-          ])
-
-    );
+            child: Column(
+              children: [
+                Padding(
+                  padding: EdgeInsets.all(16).copyWith(),
+                  child: Text(tvJsonData.info.shortInfo,
+                      style: TextStyle(fontSize: 16),
+                      textAlign: TextAlign.left),
+                ),
+                Align(
+                  alignment: Alignment.bottomLeft,
+                  child: FlatButton(
+                      child: Text(
+                        "Czytaj wiecej...",
+                        textAlign: TextAlign.left,
+                      ),
+                      onPressed: () =>
+                          _showAlert(context, tvJsonData.info.longInfo)),
+                ),
+              ],
+            ),
+          ),
+          Card(
+              clipBehavior: Clip.antiAlias,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(24),
+              ),
+              child: Column(children: [
+                Align(
+                    alignment: Alignment.topLeft,
+                    child: Padding(
+                      padding: EdgeInsets.all(16).copyWith(),
+                      child: Text(tvJsonData.tvProgram.film1,
+                          style: TextStyle(fontSize: 16),
+                          textAlign: TextAlign.left),
+                    )),
+                Align(
+                    alignment: Alignment.topLeft,
+                    child: Padding(
+                      padding: EdgeInsets.all(16).copyWith(),
+                      child: Text(tvJsonData.tvProgram.film2,
+                          style: TextStyle(fontSize: 16),
+                          textAlign: TextAlign.left),
+                    )),
+                Align(
+                    alignment: Alignment.topLeft,
+                    child: Padding(
+                      padding: EdgeInsets.all(16).copyWith(),
+                      child: Text(tvJsonData.tvProgram.film3,
+                          style: TextStyle(fontSize: 16),
+                          textAlign: TextAlign.left),
+                    )),
+                Align(
+                    alignment: Alignment.topLeft,
+                    child: Padding(
+                      padding: EdgeInsets.all(16).copyWith(),
+                      child: Text(tvJsonData.tvProgram.film4,
+                          style: TextStyle(fontSize: 16),
+                          textAlign: TextAlign.left),
+                    )),
+                Align(
+                    alignment: Alignment.topLeft,
+                    child: Padding(
+                      padding: EdgeInsets.all(16).copyWith(),
+                      child: Text(tvJsonData.tvProgram.film5,
+                          style: TextStyle(fontSize: 16),
+                          textAlign: TextAlign.left),
+                    ))
+              ]))
+        ]));
   }
 }
