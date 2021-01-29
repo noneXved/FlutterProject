@@ -190,29 +190,19 @@ class DetailPage extends StatelessWidget {
                 ],
               ),
             ),
-            ListView.builder(
-              itemCount: tvJsonData.tvProgram.length,
-              itemBuilder: (BuildContext context, int index) {
-                return Card(
-                  clipBehavior: Clip.antiAlias,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(24),
-                  ),
-                  child: Column(
-                    children: [
-                      Align(
-                          alignment: Alignment.topLeft,
-                          child: Padding(
-                            padding: EdgeInsets.all(16).copyWith(bottom: 0),
-                            child: Text(tvJsonData.tvProgram.,
-                                style: TextStyle(fontSize: 16),
-                                textAlign: TextAlign.left),
-                          )),
-                    ],
-                  ),
-                );
-              }
-            )
+            // ListView.builder(
+            //   itemCount: tvJsonData.tvProgram.length,
+            //   itemBuilder: (BuildContext context, int index) {
+            //       return ListView.builder(
+            //       itemCount: tvJsonData.tvProgram.length,
+            //       itemBuilder: (BuildContext context, int index) {
+            //
+            //       }
+            //       )
+            //       ),
+            //     );
+            //   }
+            // )
           ])
 
     );
