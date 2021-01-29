@@ -7,18 +7,16 @@ class TVP2 extends StatefulWidget {
 }
 
 class _State extends State<TVP2> {
-
   Future _showAlert(BuildContext context, String message) async {
     return showDialog(
         context: context,
         child: new AlertDialog(
           title: new Text(message),
           actions: <Widget>[
-            new FlatButton(onPressed: () => Navigator.pop(context), child: new Text('Ok'))
+            new FlatButton(
+                onPressed: () => Navigator.pop(context), child: new Text('Ok'))
           ],
-        )
-
-    );
+        ));
   }
 
   @override
