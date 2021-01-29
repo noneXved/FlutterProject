@@ -4,15 +4,15 @@
     "name" : "Telewizja Publiczna kanal 1",
     "image_url" : "https://www.chrzescijanskiegranie.pl/aktualnosci/wp-content/uploads/2017/11/tvp1.jpg",
     "info" : {
-        "short_info" : "Telewizja polska powstala w 2009",
-        "long_info" : "Telewizja polska powstala w 2009 i jest najwieksza stacja mediow publicznych"
+        "short_info" : "Hit dnia! Szklana pułapka (1988)",
+        "long_info" : "Grupa terrorystów opanowuje korporacyjny wieżowiec. Może ich powstrzymać tylko jeden policjant, John McClane."
     },
     "tv_program" : {
-      "film1" : "18:20-19:10 Przeminelo z TVP",
-      "film2" : "18:20-19:10 Przeminelo z TVP",
-      "film3" : "18:20-19:10 Przeminelo z TVP",
-      "film4" : "18:20-19:10 Przeminelo z TVP",
-      "film5" : "18:20-19:10 Przeminelo z TVP"
+      "film1" : "13:20-14:10 Przeminelo z wiatrem",
+      "film2" : "15:20-16:10 007 zglos sie",
+      "film3" : "16:15-18:00 Jaka to melodia",
+      "film4" : "18:20-20:10 Plebania",
+      "film5" : "20:20-23:10 Szklana pulapka"
     }
   },
   {
@@ -20,15 +20,15 @@
     "name" : "Telewizja Publiczna kanal 2",
     "image_url" : "https://s3.tvp.pl/images2/c/d/c/uid_cdced92b08c26f08cb9c2999bc9c788a1394791147378_width_900_play_0_pos_0_gs_0_height_506.jpg",
     "info" : {
-      "short_info" : "Telewizja polska powstala w 2009",
-      "long_info" : "Telewizja polska powstala w 2009 i jest najwieksza stacja mediow publicznych i tam bla bla bla dfadffs"
+      "short_info" : "Hit dnia! Komando (1985)",
+      "long_info" : "John Matrix, były żołnierz oddziałów specjalnych, rozpoczyna prywatną wojnę przeciwko ludziom, którzy porwali jego córkę."
     },
     "tv_program" : {
-      "film1" : "18:20-19:10 Przeminelo z TVP2",
-      "film2" : "18:20-19:10 Przeminelo z TVP2",
-      "film3" : "18:20-19:10 Przeminelo z TVP2",
-      "film4" : "18:20-19:10 Przeminelo z TVP2",
-      "film5" : "18:20-19:10 Przeminelo z TVP2"
+      "film1" : "12:20-17:10 Trylogia Sienkiewicza",
+      "film2" : "17:20-18:10 Boso przez swiat",
+      "film3" : "18:20-19:10 Wiadomosci",
+      "film4" : "19:20-19:35 Przeminelo z wiatrem",
+      "film5" : "20:20-22:10 Komando"
     }
   },
   {
@@ -36,15 +36,15 @@
     "name" : "Polsat",
     "image_url" : "https://s.redefine.pl/file/o2/redefine/cp/wc/wcf6cyx9nnuiw2gya884egvyid6a3trs.jpg",
     "info" : {
-      "short_info" : "Pierwsza komercyjna telewizja",
-      "long_info" : "Pierwsza komercyjna telwizja powstala w 2006 roku oraz wtedy kapila lorem ipsum"
+      "short_info" : "Hit dnia! Rambo (1972)",
+      "long_info" : "John Rambo, były żołnierz USA, który przeżył traumę wspomnieniami wojny w Wietnamie, wpada w tarapaty, gdy incydent z szeryfem z małego miasteczka wyzwala jego brutalną stronę."
     },
     "tv_program" : {
-      "film1" : "18:20-19:10 Przeminelo z Polsatem",
-      "film2" : "18:20-19:10 Przeminelo z Polsatem",
-      "film3" : "18:20-19:10 Przeminelo z Polsatem",
-      "film4" : "18:20-19:10 Przeminelo z Polsatem",
-      "film5" : "18:20-19:10 Przeminelo z Polsatem"
+      "film1" : "18:20-19:10 Czlowiek w zelaznej masce",
+      "film2" : "18:20-19:10 Weekend",
+      "film3" : "18:20-19:10 Wojna polsko-polska",
+      "film4" : "18:20-19:10 Przeminelo z wiatrem",
+      "film5" : "18:20-19:10 Rambo"
     }
   },
   {
@@ -52,15 +52,15 @@
     "name" : "TVN",
     "image_url" : "https://zakupersi.com/wp-content/uploads/2019/10/tvn.png",
     "info" : {
-      "short_info" : "Telewizja prywatna",
-      "long_info" : "Telewizja prywatna zostala zfinansowana przez kapital niemiecki na skraju tysiaclecia"
+      "short_info" : "Hit dnia! Obcy vs Predator",
+      "long_info" : "Członkowie ekipy badawczej trafiają w środek wojny niebezpiecznych przedstawicieli dwóch wrogich ras."
     },
     "tv_program" : {
-      "film1" : "18:20-19:10 Przeminelo z TVN",
-      "film2" : "18:20-19:10 Przeminelo z TVN",
-      "film3" : "18:20-19:10 Przeminelo z TVN",
-      "film4" : "18:20-19:10 Przeminelo z TVN",
-      "film5" : "18:20-19:10 Przeminelo z TVN"
+      "film1" : "18:20-19:10 Dzien dobry TVN",
+      "film2" : "18:20-19:10 Alternatywy 4",
+      "film3" : "18:20-19:10 Ukryta prawda",
+      "film4" : "18:20-19:10 Szpital",
+      "film5" : "18:20-19:10 Obcy vs Predator"
     }
 
   }
