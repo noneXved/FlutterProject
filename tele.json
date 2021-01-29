@@ -1,4 +1,36 @@
-{
-  "poniedzialek" : "dzien dobry TVN ",
-  "wtorek" : "witam panstwa"
-}
+[
+  {
+    "id" : 1,
+    "name" : "Telewizja Publiczna kanal 1",
+    "image_url" : "https://www.chrzescijanskiegranie.pl/aktualnosci/wp-content/uploads/2017/11/tvp1.jpg",
+    "tv_program" : [
+      {
+        "id": 1,
+        "hour" : 18,
+        "name": "Przeminelo z wiatrem"
+      },
+      {
+        "id": 2,
+        "hour" : 20,
+        "name": "Przeminelo z deszczem"
+      }
+    ]
+  },
+  {
+    "id" : 2,
+    "name" : "Telewizja Publiczna kanal 2",
+    "image_url" : "https://s3.tvp.pl/images2/c/d/c/uid_cdced92b08c26f08cb9c2999bc9c788a1394791147378_width_900_play_0_pos_0_gs_0_height_506.jpg",
+    "tv_program" : [
+      {
+        "id": 1,
+        "hour" : 18,
+        "name": "Przeminelo z wiatrem"
+      },
+      {
+        "id": 2,
+        "hour" : 20,
+        "name": "Przeminelo z deszczem"
+      }
+    ]
+  }
+]
