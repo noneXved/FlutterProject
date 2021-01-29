@@ -15,7 +15,27 @@
     "image_url" : "https://s3.tvp.pl/images2/c/d/c/uid_cdced92b08c26f08cb9c2999bc9c788a1394791147378_width_900_play_0_pos_0_gs_0_height_506.jpg",
     "info" : {
       "short_info" : "Telewizja polska powstala w 2009",
-      "long_info" : "Telewizja polska powstala w 2009 i jest najwieksza stacja mediow publicznych"
+      "long_info" : "Telewizja polska powstala w 2009 i jest najwieksza stacja mediow publicznych i tam bla bla bla dfadffs"
+    },
+    "tv_program" : [ "Przeminelo z wiatrem", "Przeminelo z deszczem"]
+  },
+  {
+    "id" : 3,
+    "name" : "Polsat",
+    "image_url" : "https://s.redefine.pl/file/o2/redefine/cp/wc/wcf6cyx9nnuiw2gya884egvyid6a3trs.jpg",
+    "info" : {
+      "short_info" : "Pierwsza komercyjna telewizja",
+      "long_info" : "Pierwsza komercyjna telwizja powstala w 2006 roku oraz wtedy kapila lorem ipsum"
+    },
+    "tv_program" : [ "Przeminelo z wiatrem", "Przeminelo z deszczem"]
+  },
+  {
+    "id" : 4,
+    "name" : "TVN",
+    "image_url" : "https://zakupersi.com/wp-content/uploads/2019/10/tvn.png",
+    "info" : {
+      "short_info" : "Telewizja prywatna",
+      "long_info" : "Telewizja prywatna zostala zfinansowana przez kapital niemiecki na skraju tysiaclecia"
     },
     "tv_program" : [ "Przeminelo z wiatrem", "Przeminelo z deszczem"]
   }
