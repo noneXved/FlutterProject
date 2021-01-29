@@ -7,18 +7,7 @@
         "short_info" : "Telewizja polska powstala w 2009",
         "long_info" : "Telewizja polska powstala w 2009 i jest najwieksza stacja mediow publicznych"
     },
-    "tv_program" : [
-      {
-        "id": 1,
-        "hour" : 18,
-        "name": "Przeminelo z wiatrem"
-      },
-      {
-        "id": 2,
-        "hour" : 20,
-        "name": "Przeminelo z deszczem"
-      }
-    ]
+    "tv_program" : [ "Przeminelo z wiatrem", "Przeminelo z deszczem"]
   },
   {
     "id" : 2,
@@ -28,17 +17,6 @@
       "short_info" : "Telewizja polska powstala w 2009",
       "long_info" : "Telewizja polska powstala w 2009 i jest najwieksza stacja mediow publicznych"
     },
-    "tv_program" : [
-      {
-        "id": 1,
-        "hour" : 18,
-        "name": "Przeminelo z wiatrem"
-      },
-      {
-        "id": 2,
-        "hour" : 20,
-        "name": "Przeminelo z deszczem"
-      }
-    ]
+    "tv_program" : [ "Przeminelo z wiatrem", "Przeminelo z deszczem"]
   }
 ]
