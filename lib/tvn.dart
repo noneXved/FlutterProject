@@ -6,6 +6,20 @@ class TVN extends StatefulWidget {
 }
 
 class _State extends State<TVN> {
+
+  Future _showAlert(BuildContext context, String message) async {
+    return showDialog(
+        context: context,
+        child: new AlertDialog(
+          title: new Text(message),
+          actions: <Widget>[
+            new FlatButton(onPressed: () => Navigator.pop(context), child: new Text('Ok'))
+          ],
+        )
+
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -32,7 +46,7 @@ class _State extends State<TVN> {
                       child: FlatButton(
                         child: Text("Czytaj wiecej...", textAlign: TextAlign.left,
                         ),
-                        onPressed: () {},
+                          onPressed: () => _showAlert(context, 'No i sie rozwijala i rozwijala i rozwijala')
                       ),
                     )
                   ],
