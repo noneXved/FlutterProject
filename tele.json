@@ -7,7 +7,20 @@
         "short_info" : "Telewizja polska powstala w 2009",
         "long_info" : "Telewizja polska powstala w 2009 i jest najwieksza stacja mediow publicznych"
     },
-    "tv_program" : [ "Przeminelo z wiatrem", "Przeminelo z deszczem"]
+    "tv_program" : [
+      {
+        "hour" : "18:00 - 19:30",
+        "movie" : "Przeminelo z wiatrem"
+      },
+      {
+        "hour" : "18:00 - 19:30",
+        "movie" : "Przeminelo z wiatrem"
+      },
+      {
+        "hour" : "18:00 - 19:30",
+        "movie" : "Przeminelo z wiatrem"
+      }
+    ]
   },
   {
     "id" : 2,
@@ -17,7 +30,20 @@
       "short_info" : "Telewizja polska powstala w 2009",
       "long_info" : "Telewizja polska powstala w 2009 i jest najwieksza stacja mediow publicznych i tam bla bla bla dfadffs"
     },
-    "tv_program" : [ "Przeminelo z wiatrem", "Przeminelo z deszczem"]
+    "tv_program" : [
+        {
+          "hour" : "18:00 - 19:30",
+          "movie" : "Przeminelo z wiatrem"
+        },
+        {
+          "hour" : "18:00 - 19:30",
+          "movie" : "Przeminelo z wiatrem"
+        },
+        {
+          "hour" : "18:00 - 19:30",
+          "movie" : "Przeminelo z wiatrem"
+        }
+    ]
   },
   {
     "id" : 3,
@@ -27,7 +53,20 @@
       "short_info" : "Pierwsza komercyjna telewizja",
       "long_info" : "Pierwsza komercyjna telwizja powstala w 2006 roku oraz wtedy kapila lorem ipsum"
     },
-    "tv_program" : [ "Przeminelo z wiatrem", "Przeminelo z deszczem"]
+    "tv_program" : [
+      {
+        "hour" : "18:00 - 19:30",
+        "movie" : "Przeminelo z wiatrem"
+      },
+      {
+        "hour" : "18:00 - 19:30",
+        "movie" : "Przeminelo z wiatrem"
+      },
+      {
+        "hour" : "18:00 - 19:30",
+        "movie" : "Przeminelo z wiatrem"
+      }
+      ]
   },
   {
     "id" : 4,
@@ -37,6 +76,19 @@
       "short_info" : "Telewizja prywatna",
       "long_info" : "Telewizja prywatna zostala zfinansowana przez kapital niemiecki na skraju tysiaclecia"
     },
-    "tv_program" : [ "Przeminelo z wiatrem", "Przeminelo z deszczem"]
+    "tv_program" : [
+      {
+        "hour" : "18:00 - 19:30",
+        "movie" : "Przeminelo z wiatrem"
+      },
+      {
+        "hour" : "18:00 - 19:30",
+        "movie" : "Przeminelo z wiatrem"
+      },
+      {
+        "hour" : "18:00 - 19:30",
+        "movie" : "Przeminelo z wiatrem"
+      }
+      ]
   }
 ]
